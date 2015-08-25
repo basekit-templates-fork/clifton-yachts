@@ -1,0 +1,85 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+	<header class="template-header">
+
+		<div class="container">
+
+			<div class="container  container--flexbox">
+				{{widget('logo', 'headerlogo', {
+					"defaultlogo": asset('images/logo.png')
+				})|raw}}
+
+				{{widget('companyname', 'headercompanyname', {
+					"business": "profile"
+				})|raw}}
+
+				{{widget('extendednavigation', 'headernavigation', {
+					"align":"right"
+				})|raw}}
+
+			</div>
+
+			{{widget('line', 'headerline', {})|raw}}
+
+		</div>
+
+	</header>
+
+	{{widget('feature', 'headerfeature', {
+		"header": "profile",
+		"strapline": "profile",
+		"defaultBgImg": asset('images/feature.png'),
+		"positionTopPercentage": "0",
+		"showBtn": true,
+		"buttonText": "Lorem Ipsum"
+	})|raw}}
+
+	<section class="template-content">
+
+		{{widget('image', 'sidebarimage', {
+			'src': asset('/images/sidebar.jpg')
+		})|raw}}
+
+		<div class="container  container--main">
+
+			{{zone('main')|raw}}
+
+			<footer class="template-footer--line">
+
+				{{widget('line', 'footerline', {})|raw}}
+
+			</footer>
+
+		</div>
+
+	</section>
+
+
+	<footer class="template-footer">
+
+		<div class="container">
+
+			{{widget('logo', 'footerlogo', {
+				"defaultlogo": asset('images/logodark.png')
+			})|raw}}
+
+			<div class="profile-content">
+				{{widget('profile', 'footerprofile1', {
+					"profileType":"strapline",
+					"strapline":"profile"
+				})|raw}}
+
+				{{widget('profile', 'footerprofile2', {
+					"profileType":"copyright",
+					"copyright":"profile"
+				})|raw}}
+			</div>
+
+		</div>
+
+	</footer>
+
+
+{% endblock %}

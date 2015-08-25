@@ -1,0 +1,145 @@
+// ----
+// blog
+// ----
+
+// blog
+.image-link {
+	.menu .item-image .image-link;
+	.image {
+		.menu .item-image .image;
+	}
+}
+
+.menu .item-image .image-link,
+.image-link,
+.product-item-image,
+.product-item-image .image-link {
+	background-color: darken(@color-swatch1, 3%);
+}
+
+.item-content,
+.product-item-details {
+	margin-top: 0;
+	background-color: darken(@color-swatch1, 5%);
+	padding: 18px 20px 20px;
+	@media @mobile {
+		padding: 8px 10px 10px;
+	}
+}
+
+.post-content,
+.product-content {
+	margin: 0;
+	padding: 15px 0 0;
+}
+
+.menu-section--featured,
+.menu-section--subsection {
+	padding: 20px;
+	margin-bottom: 20px;
+	@media @mobile {
+		padding: 10px;
+	}
+}
+
+.menu-section--subsection {
+	border: 1px solid darken(@color-swatch1, 7%);
+}
+
+.menu-section--subsection {
+	.section-note {
+		padding-bottom: 0;
+	}
+}
+
+.menu .menu-item--featured {
+	padding: 0 0 20px;
+	background-color: transparent;
+	 .item-image .image-link {
+		background-color: lighten(@color-swatch2, 2%);
+	}
+	.item-content {
+		background-color: @color-swatch2
+	}
+	h3, h4, p, li {
+		color: lighten(@color-swatch1, 5%);
+	}
+}
+
+.menu-item {
+	width: 100%;
+	padding-bottom: 20px;
+	margin-bottom: 0;
+	display: block;
+	@media @mobile {
+		padding-bottom: 10px;
+	}
+}
+
+.menu-items:not(.menu-section--subsection),
+.menu-list {
+	column-gap: 20px;
+	-moz-column-gap: 20px;
+	-webkit-column-gap: 20px;
+	overflow: hidden;
+}
+
+.section-subtitle {
+	.paragraph;
+	font-weight: 700;
+}
+
+.section-header {
+	margin-bottom: 10px;
+}
+
+.menu > .menu-section {
+	padding-bottom: 5px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid fadeout(@color-swatch5, 70%);
+}
+
+.dietary-list {
+	margin-top: 0.4em;
+}
+
+.dietary-item {
+	background-color: rgba(255,255,255,0.30); // Hard coded colour to lighten background using transparent white
+	padding: .1em .4em;
+	margin-right: .2em;
+}
+
+.timestamp {
+	color: lighten(@font-swatch5-color, 15%);
+}
+
+.tag-item {
+	&:after {
+		content: ", ";
+		margin-left: -0.25em;
+		display: inherit;
+	}
+	&:last-of-type:after {
+		content: "";
+	}
+}
+
+.post-pagination {
+	.pagination-list {
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+	}
+	.pagination-item {
+		-moz-box-flex: 1;
+		-webkit-flex: 1 1 auto;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+
+		text-align: right;
+		&:first-of-type {
+			text-align: left;
+		}
+	}
+}

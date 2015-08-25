@@ -1,0 +1,149 @@
+// ---------
+// ecommerce
+// ---------
+
+// Product list widget
+// -------------------
+
+// Product list container
+.product-list {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+// Product items in container
+.product-item {
+	position: relative;
+	width: 32%;
+	margin-bottom: 20px;
+	// Display 100% at mobile
+	@media @mobile {
+		width: 100%;
+		margin-bottom: 4%;
+	}
+}
+
+[class*="columns-two"],
+[class*="columns-three"],
+[class*="columns-four"] {
+	.product-item {
+		width: 100%;
+		margin-bottom: 4%;
+	}
+}
+
+.product-gallery {
+	margin: 3px 0;
+	.gallery-item {
+		margin-right: 1px;
+		margin-bottom: 5px;
+	}
+}
+
+// Basket widget
+// -------------
+
+// Contents of basket
+.basket-body {
+	max-width: 400px;
+	@media @mobile {
+		max-width: 100%;
+	}
+}
+
+// Image & Details positioning
+.basket-item-image,
+.basket-item-details {
+	display: inline-block;
+	vertical-align: top;
+}
+
+// Basket item positioning
+.basket-item-image {
+	width: 20%;
+	margin-right: 5%;
+	@media @mobile {
+		width: 100%;
+		margin-right: 0;
+	}
+}
+
+// Basket item details positioning
+.basket-item-details {
+	width: 73%;
+	@media @mobile {
+		width: 100%;
+	}
+}
+
+// Basket item name positioning
+.basket-item-name {
+	display: block;
+	max-width: 90%;
+	line-height: @font-swatch5-line-height;
+	@media @mobile {
+		width: 100%;
+	}
+}
+
+// Remove Button
+.item-remove {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.remove-text {
+	display: none; // Hides remove text
+}
+
+.summary-table .cell--quantity {
+	overflow: hidden;
+}
+
+.summary-item-link.no-image {
+	background-image: none;
+}
+
+.message {
+	margin: 10px 0;
+}
+
+.product-actions {
+	margin: 0 0 20px;
+}
+
+.ecomproduct__fieldset {
+	background-color: darken(@color-swatch1, 3%);
+	padding: 20px;
+	margin-bottom: 10px;
+	.form-body {
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.form-group {
+		margin-right: 10px;
+		margin-bottom: 0;
+		margin-top: 10px;
+	}
+	legend {
+		top: 30px;
+		position: relative;
+	}
+}
+
+// Product categories links
+.ecomcategorieslist__category-list {
+	margin-top: 0;
+}

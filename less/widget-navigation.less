@@ -1,0 +1,70 @@
+// ----------
+// navigation
+// ----------
+
+// Hide toggle on desktop
+.navigation-toggle {
+	display: none;
+	&:after {
+		content: "\f0c9";
+	}
+	@media @tablet {
+		display: inline-block;
+	}
+}
+
+// Clears margin on ul, hides navigatio on mobile (made visible in conjunction with navigation-toggle)
+.navigation-list {
+	margin: 0;
+	@media @tablet {
+		display: none;
+		&.open {
+			display: block;
+		}
+	}
+}
+
+// Sets background colour to navigation and dropdowns
+.extendednavigation,
+.navigation-list--children {
+	background-color: @font-swatch6-background-color;
+}
+
+.extendednavigation {
+	padding: 20px 0;
+}
+
+// Set minimal width for folder list
+
+.navigation-list--children {
+	min-width: 180px;
+}
+
+// Sets nav items to full width on mobile and tablet
+.navigation-item {
+	cursor: pointer;
+	&:hover,
+	&.selected {
+		background-color: lighten(@font-swatch6-background-color-hover,10%);
+	}
+	@media @tablet {
+		display: block;
+	}
+}
+
+// Allow sub items to wrap
+.navigation-item--child {
+	white-space: normal;
+}
+
+// Dropdown parent arrow
+.item-name--parent {
+	&:after {
+		vertical-align: middle;
+		margin-left: 4px;
+		border: none;
+		font-family: 'FontAwesome', sans-serif;
+		content: "\f107";
+		font-size: 1rem;
+	}
+}

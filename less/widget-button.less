@@ -1,0 +1,445 @@
+// ------------
+// buttons
+// ------------
+
+
+// Main button styles
+button,
+.button,
+button.button,
+a.button,
+select.select {
+	padding: .8em 1.4em;
+	position: relative;
+	transition: .2s;
+	-webkit-font-smoothing: antialiased;
+	padding-right: 5em;
+	&:before,
+	&:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		padding: inherit;
+		padding-right: 1rem;
+		margin: 0;
+		font-size: 1.2rem;
+		line-height: inherit;
+	}
+	&:before {
+		transition: .2s;
+		font-family: 'FontAwesome', sans-serif;
+		z-index: 1;
+		-webkit-transform-origin: center center;
+	}
+	&:after {
+		background-color: @font-swatch7-background-color-hover;
+		content: "\00a0\00a0\00a0";
+	}
+	&:hover:before {
+		-webkit-transform: scale(1.4);
+		-webkit-transform-origin: center center;
+	}
+	&.added {
+		&:after {
+			background-color: darken(green,10%);
+		}
+	}
+}
+
+
+// Columns editor controls fix
+#select-columns-num button {
+	&:before,
+	&:after {
+		display: none;
+	}
+}
+
+// Button widget
+button.buttonwidget__button,
+.button.button--primary,
+.button.button--next {
+	&:before,
+	&:after {
+		font-size: 2rem;
+		padding: .6rem 1rem;
+	}
+	&:after {
+		content: "\00a0\00a0";
+	}
+	&:before {
+		content: "\F105";
+		text-indent: -.4rem;
+	}
+	&:hover:before {
+		-webkit-animation: bounceright .4s alternate ease infinite;
+		-webkit-transform: inherit;
+	}
+}
+
+@-webkit-keyframes bounceright {
+	from { -webkit-transform: translate(0, 0); }
+	to   { -webkit-transform: translate(4px, 0); }
+}
+
+
+// Click to call widget and Phone number widget
+.phone-number-link {
+	.button;
+	&:before,
+	&:after {
+		font-size: 1.35rem;
+		padding-right: 1rem;
+	}
+	&:hover:before {
+		-webkit-animation: wiggle .05s alternate ease infinite;
+	}
+}
+
+@-webkit-keyframes wiggle {
+	from { -webkit-transform: rotate(0deg); }
+	to   { -webkit-transform: rotate(30deg); }
+}
+
+
+// Sign up and contact form widget buttons
+button.signupform__button,
+button.contactform__button {
+	&:before,
+	&:after {
+		font-size: 1rem;
+		transition: .2s;
+		padding-right: 1.2rem;
+	}
+	&:before {
+		content: "\f0e0";
+	}
+	&:hover:before {
+		-webkit-animation: none;
+		-webkit-transform: skew(-20deg);
+		text-indent: .1rem;
+	}
+}
+
+// Blog search widget and product list widget buttons
+.blogsearch__button,
+.form-group .ecomproductslist__button {
+	&:before {
+		content:"\f002";
+	}
+}
+
+.button.button--clear {
+	margin-left: 20px;
+	&:before {
+		content: "\f00d";
+		padding-right: 1.2rem;
+	}
+}
+
+button.ecombasketsummary__button {
+	&:before {
+		content: "\f09d";
+	}
+	&:hover:before {
+		-webkit-animation: none;
+		-webkit-transform: skew(-20deg);
+	}
+}
+
+// Remove icon and tab from certain buttons
+.ecomproductslist .button--pagination,
+.button.button--quantity {
+	padding-right: 1.4em;
+	&:after {
+		content: "";
+		display: none;
+	}
+}
+
+.ecomproductslist .current .button--pagination {
+	background-color: @font-swatch7-background-color-hover;
+}
+
+// Remove button styles from quantity buttons
+.button--quantity {
+	.button;
+	height: auto;
+	width: auto;
+	padding: .8em 1.4em;
+}
+
+// Add text back onto 'remove' buttons
+span.remove-text {
+	display: inherit;
+}
+.item-remove:hover:before {
+	-webkit-transform: scale(1.4);
+}
+
+.button.item-remove {
+	&:before,
+	&:after {
+		padding: 0.6rem 0.55rem;
+		font-size: 1rem;
+	}
+}
+
+.button.ecomproduct__button,
+.button.ecombasket__basket-toggle,
+.button.ecombasket__button,
+.button.ecombasketsummary__continue-shopping {
+	&:before {
+		content: "\f07a";
+		-webkit-transform-origin: 43% 86%;
+		text-indent: -.3rem;
+	}
+	&:hover:before {
+		-webkit-animation: none;
+		-webkit-transform: rotate(-20deg);
+		text-indent: .1rem;
+	}
+}
+
+select.select {
+	.button;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: none;
+	height: auto;
+	padding-right: 5.3em;
+	z-index: 2;
+	background-color: transparent;
+	font-size: inherit;
+	width: 100%;
+	&:hover {
+		background-color: transparent;
+	}
+
+	option {
+		color: @font-swatch7-color;
+		background-color: @font-swatch7-background-color;
+	}
+}
+.select-wrap {
+	padding: 0;
+	display: inline-block;
+	position: relative;
+	color: @font-swatch7-color;
+	background-color: @font-swatch7-background-color;
+	font-size: @font-swatch7-font-size;
+	transition: .2s;
+	-webkit-font-smoothing: antialiased;
+	&:hover {
+		background-color: @font-swatch7-background-color-hover;
+	}
+	&:before,
+	&:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		padding: .6rem 1rem;
+		color: inherit;
+	}
+	&:before {
+		transition: .2s;
+		z-index: 1;
+		font-size: 1.9rem;
+		font-family: 'FontAwesome', sans-serif;
+		content: "\f107";
+	}
+	&:after {
+		background-color: @font-swatch7-background-color-hover;
+		font-size: 2rem;
+		content: "\00a0\00a0";
+	}
+	&:hover:before {
+		-webkit-animation: bouncedown .4s alternate ease infinite;
+	}
+}
+
+.select::-ms-expand {
+	display: none;
+}
+
+.button--expand {
+	cursor: pointer;
+	margin-top: 10px;
+	&:before {
+		transition: .2s;
+		z-index: 1;
+		font-size: 1.9rem;
+		font-family: 'FontAwesome', sans-serif;
+		content: "\f107";
+		padding: .6rem 1rem;
+	}
+	&:hover:before {
+		-webkit-animation: bouncedown .4s alternate ease infinite;
+	}
+}
+
+@-webkit-keyframes bouncedown {
+	from { -webkit-transform: translate(0, 0); }
+	to   { -webkit-transform: translate(0, 4px); }
+}
+
+.fieldset--filters {
+	.ecomproductslist__form-body {
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		margin-left: -20px;
+		@media @mobile {
+			margin-left: 0;
+		}
+		.form-group {
+			-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			margin-left: 20px;
+			margin-bottom: 10px;
+			@media @mobile {
+				width: 100%;
+				margin-left: 0;
+			}
+		}
+		.select-wrap {
+			width: 100%;
+		}
+	}
+}
+
+[class*="columns-two"],
+[class*="columns-three"],
+[class*="columns-four"] {
+	.fieldset--filters {
+		.ecomproductslist__form-body {
+			margin-left: 0;
+		}
+		.form-group {
+			margin-left: 0;
+		}
+	}
+}
+
+.button.button--quantity,
+.slide-navigation .button {
+	width: auto;
+	height: auto;
+	padding: .8em 1.4em;
+	text-indent: -200px;
+	width: 3.1em;
+	overflow: hidden;
+	-webkit-transform-origin: top left;
+	&:before {
+		font-family: 'FontAwesome', sans-serif;
+		top: 0;
+		right: 0;
+		font-size: 1rem;
+		text-indent: -.25rem;
+		padding: .6rem 1rem;
+	}
+	&:after {
+		display: none;
+	}
+}
+
+.button.button--quantity {
+	&:before {
+		content: "\f067";
+		line-height: 1.5em;
+		left: 0;
+		padding: inherit;
+	}
+	&.quantity-minus:before {
+		content: "\f068";
+	}
+}
+
+div.quantity-wrap {
+	width: 100%;
+	max-width: initial;
+	font-family: @font-swatch7-font-family;
+	font-size: @font-swatch7-font-size;
+	color: @font-swatch7-color;
+	background-color: @font-swatch7-background-color-hover;
+}
+
+.quantity-field {
+	padding: .8em 1.4em;
+	text-align: center;
+}
+
+th {
+	background-color: darken(@color-swatch1, 5%);
+}
+
+table {
+	border-color: darken(@color-swatch1, 3%);
+	.image {
+		max-width: 100px;
+	}
+}
+
+
+// Feature
+.feature__content-wrap {
+	text-shadow: 0 0 60px rgba(0,0,0,0.5); // Hard coded transparent black so text is easier to read on all backgrounds
+}
+
+// Nav button
+.navigation-toggle:after {
+	margin-left: 0;
+}
+
+.widget__dropbox {
+	font-family: @font-swatch7-font-family;
+	color: @font-swatch7-color;
+	font-size: 0;
+}
+
+.dropbox__label {
+	display: inline-block;
+	padding: .8em 1.4em .8em 0;
+	background-color: @font-swatch7-background-color-hover;
+	font-size: @font-swatch7-font-size;
+	-webkit-font-smoothing: antialiased;
+	@media @mobile {
+		padding-left: 1.4em;
+	}
+}
+
+// Blog pagination
+.button.button--previous {
+	padding-left: 5em;
+	padding-right: 1.4em;
+	&:before,
+	&:after {
+		right: auto;
+		left: 0;
+		font-size: 2rem;
+		content: "\00a0\00a0";
+		padding: .6rem 1rem;
+		text-indent: -0.15rem;
+	}
+	&:before {
+		content: "\F104";
+	}
+	&:hover:before {
+		transition: .2s;
+		-webkit-animation: bounceleft .4s alternate ease infinite;
+		-webkit-transform: inherit;
+	}
+}
+
+@-webkit-keyframes bounceleft {
+	from { -webkit-transform: translate(0, 0); }
+	to   { -webkit-transform: translate(-4px, 0); }
+}
+
+// Facebook share button adjustment
+.button.icon--facebook:before {
+	padding-right: 1.2rem;
+}
